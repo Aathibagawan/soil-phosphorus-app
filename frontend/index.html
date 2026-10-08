@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Predict · Soil Phosphorus Predictor</title><link rel="stylesheet" href="css/app.css"><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>"></head>
+<body>
+<main>
+  <h1>Predict soil phosphorus</h1>
+  <p class="lead">Enter sensor readings and the CNN-BiLSTM-Attention model estimates phosphorus content. Every prediction is saved to your <a href="history.html">history</a>.</p>
+  <div id="banner"></div>
+
+  <section class="card">
+    <div class="tabs" role="tablist">
+      <button role="tab" id="tab-single" aria-selected="true">Single reading</button>
+      <button role="tab" id="tab-csv" aria-selected="false">Time series (CSV)</button>
+    </div>
+
+    <form id="single" novalidate>
+      <div class="alert info" id="single-note"></div>
+      <div class="grid" id="fields"></div>
+      <div style="margin-top:14px"><label for="label1">Label <small>(optional, e.g. “North plot”)</small></label>
+        <input type="text" id="label1" maxlength="120"></div>
+      <div class="row"><button class="btn" type="submit">Predict</button>
+        <button class="btn sec" type="button" id="fill-defaults">Fill typical values</button></div>
+    </form>
+
+    <div id="csvpane" class="hidden">
+      <p id="csv-note" class="meta"></p>
+      <div class="drop" id="drop"><p>Drop a CSV here or choose a file</p><input type="file" id="file" accept=".csv,text/csv"></div>
+      <div style="margin-top:14px"><label for="label2">Label <small>(optional)</small></label><input type="text" id="label2" maxlength="120"></div>
+      <div class="row"><button class="btn" id="csv-go" type="button">Predict from CSV</button>
+        <button class="btn sec" id="sample-go" type="button">Try a real example window</button>
+        <button class="btn sec" id="tpl" type="button">Download CSV template</button></div>
+    </div>
+    <div id="errors"></div>
+  </section>
+
+  <section id="result" class="card hidden" aria-live="polite"></section>
+</main>
+<footer>Decision-support estimate only. Not a substitute for laboratory soil analysis.</footer>
+<script src="js/common.js"></script><script src="js/predict.js"></script>
+</body></html>

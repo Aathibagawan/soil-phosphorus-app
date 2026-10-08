@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>History · Soil Phosphorus Predictor</title><link rel="stylesheet" href="css/app.css"><link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>"></head>
+<body><main>
+  <h1>Prediction history</h1>
+  <p class="lead">Predictions made from this browser. History is tied to an anonymous ID stored in your browser — clearing site data detaches it.</p>
+  <div id="msg"></div>
+  <section class="card"><div class="stats" id="stats"></div><div id="trend" style="margin-top:16px"></div></section>
+  <section class="card">
+    <div class="row" style="margin:0 0 12px"><h2 style="margin:0;flex:1">Predictions</h2>
+      <button class="btn sec" id="export">Export CSV</button><button class="btn danger" id="clear">Clear all</button></div>
+    <div class="table-wrap"><table><thead><tr><th>#</th><th>When</th><th>Label</th><th>Input</th><th>Phosphorus</th><th>Notes</th><th></th></tr></thead><tbody id="rows"></tbody></table></div>
+    <div class="row"><button class="btn sec" id="prev">← Newer</button><span class="meta" id="pageinfo"></span><button class="btn sec" id="next">Older →</button></div>
+  </section>
+</main>
+<footer>Decision-support estimate only.</footer>
+<script src="js/common.js"></script><script src="js/history.js"></script></body></html>
